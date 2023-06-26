@@ -10,6 +10,8 @@ type ChessboardStateFunctions = Pick<
   | 'insufficient_material'
   | 'game_over'
   | 'fen'
+  | 'history'
+  | 'pgn'
 >;
 
 type RecordReturnTypes<T> = {
@@ -28,5 +30,7 @@ export const getChessboardState = (chess: ChessInstance): ChessboardState => {
     insufficient_material: chess.insufficient_material(),
     game_over: chess.game_over(),
     fen: chess.fen(),
+    history: chess.history(),
+    pgn: chess.pgn(),
   };
 };
